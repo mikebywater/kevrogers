@@ -4,9 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "44151afd083cda59919844fb9ecbde57",
-    "content-hash": "0f8f34a2ee4bd678de40ea30895ff864",
+    "hash": "ae000b37a95e8481589d72b066b55525",
+    "content-hash": "933fada0d860fc756c60a017135946ea",
     "packages": [
+        {
+            "name": "appzcoder/crud-generator",
+            "version": "1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appzcoder/crud-generator.git",
+                "reference": "fa0561b7959d286d22ef894179ee7d7070549f61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appzcoder/crud-generator/zipball/fa0561b7959d286d22ef894179ee7d7070549f61",
+                "reference": "fa0561b7959d286d22ef894179ee7d7070549f61",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Appzcoder\\CrudGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sohel Amin",
+                    "email": "sohelamincse@gmail.com",
+                    "homepage": "http://www.appzcoder.com"
+                }
+            ],
+            "description": "Laravel 5 CRUD Generator",
+            "keywords": [
+                "crud",
+                "crud generator",
+                "laravel",
+                "laravel crud generator"
+            ],
+            "time": "2016-03-17 19:50:02"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "dev-master",
