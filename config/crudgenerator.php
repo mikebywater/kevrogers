@@ -2,7 +2,7 @@
 
 return [
 
-    'custom_template' => false,
+    'custom_template' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -13,6 +13,6 @@ return [
     |
      */
 
-    'path' => base_path('resources/crud-generator/'),
+    'path' => base_path('resources/layouts/'),
 
 ];
