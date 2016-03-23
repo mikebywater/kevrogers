@@ -1,0 +1,36 @@
+body
+{
+    font-family: 'Lato'; 
+}
+
+.fa-btn
+{
+    margin-right: 6px;
+}
+
+.logo
+{
+	height : 30px;
+	margin-top : -12px;
+}
+
+.logo-white
+{
+	height : 30px;
+	margin-top : -12px;
+	-webkit-filter: brightness(0) invert(1);
+	filter: brightness(0) invert(1);
+}
+
+.greyscale
+{
+
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+
+}
+
+.shadow
+{
+	text-shadow: 3px 2px #424242;
+}
