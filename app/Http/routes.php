@@ -26,9 +26,6 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
@@ -37,9 +34,10 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web', 'auth'] ], function () {
 	Route::resource('customers', 'CustomersController');
 });
-Route::group(['middleware' => ['web']], function () {
+
+Route::group(['middleware' => ['web' , 'auth']], function () {
 	Route::resource('jobs', 'JobsController');
 });
