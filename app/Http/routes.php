@@ -40,3 +40,6 @@ Route::group(['middleware' => 'web'], function () {
 Route::group(['middleware' => ['web']], function () {
 	Route::resource('customers', 'CustomersController');
 });
+Route::group(['middleware' => ['web']], function () {
+	Route::resource('jobs', 'JobsController');
+});
