@@ -44,7 +44,7 @@
                         <li><a href="{{ url('/jobs') }}">Jobs</a></li>
                         <li><a href="{{ url('/estimates') }}">Estimates</a></li>
                         <li><a href="{{ url('/invoices') }}">Invoices</a></li>
-                        <li><a href="{{ url('/accounts') }}">Accounts</a></li>
+                        <li><a href="{{ url('/transactions') }}">Accounts</a></li>
                     </ul>
                 @endif
 

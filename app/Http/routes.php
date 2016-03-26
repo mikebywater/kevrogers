@@ -41,3 +41,12 @@ Route::group(['middleware' => ['web', 'auth'] ], function () {
 Route::group(['middleware' => ['web' , 'auth']], function () {
 	Route::resource('jobs', 'JobsController');
 });
+Route::group(['middleware' => ['web']], function () {
+	Route::resource('estimates', 'EstimatesController');
+});
+Route::group(['middleware' => ['web']], function () {
+	Route::resource('invoices', 'InvoicesController');
+});
+Route::group(['middleware' => ['web']], function () {
+	Route::resource('transactions', 'TransactionsController');
+});
