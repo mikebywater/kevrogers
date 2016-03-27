@@ -4,24 +4,27 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading">{{ $customer->forename }} {{ $customer->surname }}</div>
+                <div class="panel-heading">Personal Details</div>
 
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>ID.</th> <th>Title</th><th>Forename</th><th>Surname</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ $customer->id }}</td> <td> {{ $customer->title }} </td><td> {{ $customer->forename }} </td><td> {{ $customer->surname }} </td>
-                                </tr>
-                            </tbody>    
-                        </table>
+                    <div class="panel-body">
+                       <p> {{ $customer->id }} </p>
+                       <p> {{ $customer->title }} </p>
+                       <p> {{ $customer->forename }} </p>
+                       <p> {{ $customer->surname }}  </p>
+                    </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Address</div>
+                    <div class="panel-body">
+                       <p> {{ $customer->house }} {{ $customer->street }}</p>
+                       <p> {{ $customer->town}} </p>
+                       <p> {{ $customer->county }}  </p>
+                       <p> {{ $customer->postcode }}  </p>
                     </div>
                 </div>
             </div>
