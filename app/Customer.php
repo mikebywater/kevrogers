@@ -21,4 +21,13 @@ class Customer extends Model
      */
     protected $fillable = ['title', 'forename', 'surname', 'house', 'street', 'town', 'county', 'postcode', 'telephone', 'email'];
 
+    /**
+     * Jobs reated to this customer
+     * @return Job Job object
+     */
+    public function jobs()
+    {
+        return $this->hasMany('App\Job');
+    }
+
 }
