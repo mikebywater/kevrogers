@@ -8,7 +8,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Customers 
@@ -18,16 +18,19 @@
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>S.No</th><th>Title</th><th>Forename</th><th>Surname</th>
+                                    <th>Customer Number</th><th>Surname</th><th>Forename</th><th>Address</th><th>Postcode</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            {{-- */$x=0;/* --}}
                             @foreach($customers as $item)
-                                {{-- */$x++;/* --}}
                                 <tr>
-                                    <td>{{ $x }}</td>
-                                    <td><a href="{{ url('customers', $item->id) }}">{{ $item->title }}</a></td><td>{{ $item->forename }}</td><td>{{ $item->surname }}</td>
+                                    <td>
+                                        <a href="{{ url('customers', $item->id) }}">{{ $item->ref}}</a>
+                                    </td>
+                                    <td>{{ $item->surname }}</td>
+                                    <td>{{ $item->forename }}</td>
+                                    <td>{{ $item->house }} {{ $item->street }}</td>
+                                    <td>{{ $item->postcode }}</td>
                                 </tr>
                             @endforeach
                             </tbody>

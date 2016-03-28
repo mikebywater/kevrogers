@@ -9,10 +9,9 @@
                 <div class="panel-heading">Personal Details</div>
 
                     <div class="panel-body">
-                       <p> {{ $customer->id }} </p>
-                       <p> {{ $customer->title }} </p>
-                       <p> {{ $customer->forename }} </p>
-                       <p> {{ $customer->surname }}  </p>
+                       <p> {{ $customer->ref }} </p>
+                       <p> {{ $customer->title }} {{ $customer->forename }} {{ $customer->surname }}  </p>
+                       <p> <a href="mailto:{{ $customer->email }}">{{ $customer->email }}</a> </p>
                        <a href="{{ url('customers/' . $customer->id . '/edit') }}" class="btn btn-primary btn-xs">Update</a>
                        {!! Form::open([
                             'method'=>'DELETE',

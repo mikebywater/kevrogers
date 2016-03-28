@@ -14,6 +14,8 @@ class Job extends Model
      */
     protected $table = 'jobs';
 
+    protected $appends = array('ref');
+
     /**
      * Attributes that should be mass-assignable.
      *
@@ -24,6 +26,11 @@ class Job extends Model
     public function customer()
     {
         return $this->belongsTo('App\Customer');
+    }
+
+    public function getRefAttribute()
+    {
+        return str_pad($this->id, 6,0, STR_PAD_LEFT);
     }
 
 }

@@ -14,6 +14,9 @@ class Customer extends Model
      */
     protected $table = 'customers';
 
+
+    protected $appends = array('ref');
+
     /**
      * Attributes that should be mass-assignable.
      *
@@ -38,6 +41,11 @@ class Customer extends Model
     public function invoices()
     {
         return $this->hasMany('App\Invoice');
+    }
+
+    public function getRefAttribute()
+    {
+        return str_pad($this->id, 6,0, STR_PAD_LEFT);
     }
 
 }
