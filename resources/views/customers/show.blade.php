@@ -11,6 +11,7 @@
                     <div class="panel-body">
                        <p> {{ $customer->ref }} </p>
                        <p> {{ $customer->title }} {{ $customer->forename }} {{ $customer->surname }}  </p>
+                       <p> {{ $customer->telephone }} </p>
                        <p> <a href="mailto:{{ $customer->email }}">{{ $customer->email }}</a> </p>
                        <a href="{{ url('customers/' . $customer->id . '/edit') }}" class="btn btn-primary btn-xs">Update</a>
                        {!! Form::open([
@@ -32,6 +33,7 @@
                    <p> {{ $customer->town}} </p>
                    <p> {{ $customer->county }}  </p>
                    <p> {{ $customer->postcode }}  </p>
+                   <br>
                 </div>
             </div>
         </div>
