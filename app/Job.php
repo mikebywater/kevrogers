@@ -21,4 +21,9 @@ class Job extends Model
      */
     protected $fillable = ['date', 'description', 'customer_id', 'house', 'street', 'town', 'county', 'postcode', 'items', 'materials'];
 
+    public function customer()
+    {
+        return $this->belongsTo('App\Customer');
+    }
+
 }
