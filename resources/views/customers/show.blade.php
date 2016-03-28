@@ -13,6 +13,14 @@
                        <p> {{ $customer->title }} </p>
                        <p> {{ $customer->forename }} </p>
                        <p> {{ $customer->surname }}  </p>
+                       <a href="{{ url('customers/' . $customer->id . '/edit') }}" class="btn btn-primary btn-xs">Update</a>
+                       {!! Form::open([
+                            'method'=>'DELETE',
+                            'url' => ['customers', $customer->id],
+                            'style' => 'display:inline'
+                        ]) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                        {!! Form::close() !!}
                     </div>
 
             </div>

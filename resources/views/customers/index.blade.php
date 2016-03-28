@@ -18,7 +18,7 @@
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>S.No</th><th>Title</th><th>Forename</th><th>Surname</th><th>Actions</th>
+                                    <th>S.No</th><th>Title</th><th>Forename</th><th>Surname</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -28,16 +28,6 @@
                                 <tr>
                                     <td>{{ $x }}</td>
                                     <td><a href="{{ url('customers', $item->id) }}">{{ $item->title }}</a></td><td>{{ $item->forename }}</td><td>{{ $item->surname }}</td>
-                                    <td>
-                                        <a href="{{ url('customers/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs">Update</a> 
-                                        {!! Form::open([
-                                            'method'=>'DELETE',
-                                            'url' => ['customers', $item->id],
-                                            'style' => 'display:inline'
-                                        ]) !!}
-                                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                                        {!! Form::close() !!}
-                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
