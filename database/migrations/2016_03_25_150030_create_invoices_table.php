@@ -19,6 +19,7 @@ class CreateInvoicesTable extends Migration
 $table->text('description');
 $table->integer('job_id');
 $table->integer('estimate_id');
+$table->integer('customer_id');
 $table->string('house');
 $table->string('street');
 $table->string('town');

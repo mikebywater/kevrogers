@@ -16,11 +16,10 @@ class CreateTransactionsTable extends Migration
             Schema::create('transactions', function(Blueprint $table) {
                 $table->increments('id');
                 $table->date('date');
-$table->text('description');
-$table->integer('invoice_id');
-$table->integer('amount');
-$table->string('reference');
-
+                $table->text('description');
+                $table->integer('invoice_id');
+                $table->integer('amount');
+                $table->string('reference');
                 $table->timestamps();
             });
             

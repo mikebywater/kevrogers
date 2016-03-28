@@ -30,4 +30,14 @@ class Customer extends Model
         return $this->hasMany('App\Job');
     }
 
+    public function estimates()
+    {
+        return $this->hasMany('App\Estimate');
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany('App\Invoice');
+    }
+
 }
