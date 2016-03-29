@@ -17,5 +17,7 @@ function jsonToInputs(json)
 
 function inputsToJson()
 {
-  return $('#json-inputs').serialize()
+  var inputArray = $('#json-inputs :input').serializeArray()
+  
+  return JSON.stringify(inputArray);
 }

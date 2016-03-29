@@ -30,6 +30,11 @@ Route::get('/', function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
+    Route::get('/test', function(){
+
+    	return view('test');
+    });
+
     Route::get('/home', 'HomeController@index');
 });
 
