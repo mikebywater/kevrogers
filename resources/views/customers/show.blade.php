@@ -61,7 +61,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                         <a href="{{ url('jobs/create') }}" class="btn btn-primary pull-right btn-sm">Add New Job</a>
+                         <a href="{{ url('jobs/create?customer=' . $customer->id) }}" class="btn btn-primary pull-right btn-sm">Add New Job</a>
                     </div>
                 </div>
             </div>

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use App\Customer;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests;
 use App\Job;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Session;
 
 class JobsController extends Controller
@@ -32,7 +32,17 @@ class JobsController extends Controller
      */
     public function create()
     {
-        return view('jobs.create');
+        $customerId = $_GET['customer'];
+
+        if ($customerId)
+        {
+            $customer = Customer::findOrFail($customerId);
+        }
+        else
+        {
+            $customer="";
+        }
+        return view('jobs.create', ['customer' => $customer]);
     }
 
     /**

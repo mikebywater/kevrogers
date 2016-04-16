@@ -26,44 +26,45 @@
                 </div>
             </div>
             <div class="form-group {{ $errors->has('customer_id') ? 'has-error' : ''}}">
-                {!! Form::label('customer_id', 'Customer Id: ', ['class' => 'col-sm-3 control-label']) !!}
+                {!! Form::label('customer_id', 'Customer: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::number('customer_id', null, ['class' => 'form-control']) !!}
+                    <h4 class="form-control">{{$customer->forename}} {{$customer->surname}}</h4>
+                    {!! Form::hidden('customer_id', $customer->id, ['class' => 'form-control']) !!}
                     {!! $errors->first('customer_id', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <div class="form-group {{ $errors->has('house') ? 'has-error' : ''}}">
                 {!! Form::label('house', 'House: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('house', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('house', $customer->house, ['class' => 'form-control']) !!}
                     {!! $errors->first('house', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <div class="form-group {{ $errors->has('street') ? 'has-error' : ''}}">
                 {!! Form::label('street', 'Street: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('street', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('street', $customer->street, ['class' => 'form-control']) !!}
                     {!! $errors->first('street', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <div class="form-group {{ $errors->has('town') ? 'has-error' : ''}}">
                 {!! Form::label('town', 'Town: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('town', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('town', $customer->town, ['class' => 'form-control']) !!}
                     {!! $errors->first('town', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <div class="form-group {{ $errors->has('county') ? 'has-error' : ''}}">
                 {!! Form::label('county', 'County: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('county', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('county', $customer->county, ['class' => 'form-control']) !!}
                     {!! $errors->first('county', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <div class="form-group {{ $errors->has('postcode') ? 'has-error' : ''}}">
                 {!! Form::label('postcode', 'Postcode: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::text('postcode', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('postcode', $customer->postcode, ['class' => 'form-control']) !!}
                     {!! $errors->first('postcode', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>

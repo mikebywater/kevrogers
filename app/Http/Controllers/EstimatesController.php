@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
+use App\Customer;
 use App\Estimate;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Session;
 
 class EstimatesController extends Controller
@@ -30,13 +30,23 @@ class EstimatesController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create($customerId = "")
     {
-        return view('estimates.create');
+       
+        if ($customerId)
+        {
+            $customer = Customer::findOrFail($id);
+        }
+        else
+        {
+            $customer="";
+        }
+
+        return view('estimates.create', ['customer' => $customer]);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. 
      *
      * @return Response
      */
