@@ -20,7 +20,22 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $customers = Customer::paginate(15);
+        
+        $query = "";
+
+        if(isset($_GET['q']))
+        {
+            $query = $_GET['q'];
+        }
+        
+        if($query)
+        {
+            $customers = Customer::search($query)->paginate(15);
+        }
+        else
+        {
+            $customers = Customer::paginate(15);
+        }
 
         return view('customers.index', compact('customers'));
     }

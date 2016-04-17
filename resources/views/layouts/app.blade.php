@@ -75,7 +75,7 @@
 
     @yield('content')
 
-
+    <script src="/js/search.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

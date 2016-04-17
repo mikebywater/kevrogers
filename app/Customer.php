@@ -48,4 +48,9 @@ class Customer extends Model
         return str_pad($this->id, 6,0, STR_PAD_LEFT);
     }
 
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('surname' , 'LIKE' , "%$search%");
+    }
+
 }
