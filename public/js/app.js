@@ -38,3 +38,9 @@ function createInput(name,type)
 {
 	$('#json-inputs').append("<input value='' name = '" + name +  "' placeholder='" + name + "'><br>")	
 }
+
+/**
+ * Always focus on input
+ */
+
+$('form:first *:input[type!=hidden]:first').focus();

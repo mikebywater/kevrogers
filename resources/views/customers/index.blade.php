@@ -11,8 +11,8 @@
                 </div>
                 <div class="panel-body">
                     <a href="#search" class="btn btn-primary btn-sm "><i class="fa fa-search"></i>  Search</a>
-                    <a href="/customers" class="btn btn-primary btn-sm "><i class="fa fa-close"></i>  Clear Criteria</a>
-                    <a href="{{ url('customers/create') }}" class="btn btn-primary  btn-sm"><i class="fa fa-user-plus"></i>  Add Customer</a>
+                    <a href="/customers" class="btn btn-danger btn-sm "><i class="fa fa-close"></i>  Clear Criteria</a>
+                    <a href="{{ url('customers/create') }}" class="btn btn-success  btn-sm"><i class="fa fa-user-plus"></i>  Add Customer</a>
                     <br>
                     <br>
                     @if(!$customers->isEmpty())                        
@@ -56,5 +56,5 @@
     </form>
 </div>
 
-
+<script src="/js/search.js"></script>
 @endsection
