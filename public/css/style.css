@@ -14,6 +14,11 @@ body
 	margin-top : -12px;
 }
 
+.logo-large
+{
+    height : 60px;
+}
+
 .logo-white
 {
 	height : 30px;

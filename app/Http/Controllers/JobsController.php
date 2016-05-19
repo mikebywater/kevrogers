@@ -69,9 +69,11 @@ class JobsController extends Controller
      */
     public function show($id)
     {
-        $job = Job::findOrFail($id);
+       $job = Job::findOrFail($id);
 
-        return view('jobs.show', compact('job'));
+        $pdf = \PDF::loadView('jobs.show', compact('job'));
+        return $pdf->stream();
+
     }
 
     /**
