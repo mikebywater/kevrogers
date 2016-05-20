@@ -71,7 +71,8 @@ class EstimatesController extends Controller
     {
         $estimate = Estimate::findOrFail($id);
 
-        return view('estimates.show', compact('estimate'));
+        $pdf = \PDF::loadView('estimates.show', compact('estimate'));
+        return $pdf->stream();
     }
 
     /**

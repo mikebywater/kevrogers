@@ -71,8 +71,7 @@ class JobsController extends Controller
     {
        $job = Job::findOrFail($id);
 
-        $pdf = \PDF::loadView('jobs.show', compact('job'));
-        return $pdf->stream();
+        return view('jobs.show', compact('job'));
 
     }
 
