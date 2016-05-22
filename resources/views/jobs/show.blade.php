@@ -9,20 +9,10 @@
                 <div class="panel-heading">Job</div>
 
                 <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>ID.</th> <th>Date</th><th>Description</th><th>Customer Id</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ $job->id }}</td> <td> {{ $job->date }} </td><td> {{ $job->description }} </td><td> {{ $job->customer_id }} </td>
-                                </tr>
-                            </tbody>    
-                        </table>
-                    </div>
+                    {{ $job->date }}<br>
+                    {{ $job->description }}<br>
+                    {{ $job->customer->surname}}<br>
+                    <a href="{{ url('estimates/create?job=' . $job->id) }}" class="btn btn-primary pull-right btn-sm">Create Estimate</a> 
                 </div>
             </div>
         </div>

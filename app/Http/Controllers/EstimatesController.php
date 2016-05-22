@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
+use App\Job;
 use App\Estimate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -30,19 +30,20 @@ class EstimatesController extends Controller
      *
      * @return Response
      */
-    public function create($customerId = "")
+    public function create()
     {
-       
-        if ($customerId)
+        $jobId = $_GET['job'];
+        
+        if ($jobId)
         {
-            $customer = Customer::findOrFail($id);
+            $job = Job::findOrFail($jobId);
         }
         else
         {
-            $customer="";
+            $job="";
         }
 
-        return view('estimates.create', ['customer' => $customer]);
+        return view('estimates.create', ['job' => $job]);
     }
 
     /**

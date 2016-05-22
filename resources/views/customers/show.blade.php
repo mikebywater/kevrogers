@@ -50,13 +50,13 @@
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Date</th><th>Description</th><th>Customer Id</th>
+                                    <th>Date</th><th>Description</th><th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach($customer->jobs as $item)
                                 <tr>
-                                    <td><a href="{{ url('jobs', $item->id) }}">{{ $item->date }}</a></td><td>{{ $item->description }}</td><td>{{ $item->customer_id }}</td>
+                                    <td><a href="{{ url('jobs', $item->id) }}">{{ $item->date }}</a></td><td>{{ $item->description }}</td><td>{{ $item->status }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -68,69 +68,7 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Estimates 
-                </div>
-                <div class="panel-body">
-                    <div class="table">
-                        <table class="table table-bordered table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>S.No</th><th>Date</th><th>Description</th><th>Job Id</th><th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {{-- */$x=0;/* --}}
-                            @foreach($customer->estimates as $item)
-                                {{-- */$x++;/* --}}
-                                <tr>
-                                    <td>{{ $x }}</td>
-                                    <td><a href="{{ url('estimates', $item->id) }}">{{ $item->date }}</a></td><td>{{ $item->description }}</td><td>{{ $item->job_id }}</td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        <a href="{{ url('estimates/create') }}" class="btn btn-primary pull-right btn-sm">Add New Estimate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Invoices 
-                </div>
-                <div class="panel-body">
-                    <div class="table">
-                        <table class="table table-bordered table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>S.No</th><th>Date</th><th>Description</th><th>Job Id</th><th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {{-- */$x=0;/* --}}
-                            @foreach($customer->invoices as $item)
-                                {{-- */$x++;/* --}}
-                                <tr>
-                                    <td>{{ $x }}</td>
-                                    <td><a href="{{ url('invoices', $item->id) }}">{{ $item->date }}</a></td><td>{{ $item->description }}</td><td>{{ $item->job_id }}</td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        <a href="{{ url('invoices/create') }}" class="btn btn-primary pull-right btn-sm">Add New Invoice</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 
