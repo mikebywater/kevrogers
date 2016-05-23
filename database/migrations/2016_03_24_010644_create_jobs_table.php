@@ -25,7 +25,7 @@ class CreateJobsTable extends Migration
                 $table->string('postcode');
                 $table->text('items');
                 $table->text('materials');
-                $table->text('status');
+                $table->integer('status');
                 $table->timestamps();
             });
             

@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-
+ 
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -56,7 +56,7 @@
                             <tbody>
                             @foreach($customer->jobs as $item)
                                 <tr>
-                                    <td><a href="{{ url('jobs', $item->id) }}">{{ $item->date }}</a></td><td>{{ $item->description }}</td><td>{{ $item->status }}</td>
+                                    <td><a href="{{ url('jobs', $item->id) }}">{{ $item->date }}</a></td><td>{{ $item->description }}</td><td>{{ $item->Status }}</td>
                                 </tr>
                             @endforeach
                             </tbody>

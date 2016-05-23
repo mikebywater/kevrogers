@@ -28,6 +28,16 @@ class Job extends Model
         return $this->belongsTo('App\Customer');
     }
 
+    public function estimates()
+    {
+        return $this->hasMany('App\Estimate');
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany('App\Invoice');
+    }
+
     public function getRefAttribute()
     {
         return str_pad($this->id, 6,0, STR_PAD_LEFT);
