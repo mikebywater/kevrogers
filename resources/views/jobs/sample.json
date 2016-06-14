@@ -1,0 +1,18 @@
+{
+
+"doors": "2",
+"skirtings" : "yes",
+"walls": [
+      {
+        "type": "paper",
+        "height": "6",
+        "width": "4"
+      },
+      {
+        "type": "paint",
+        "height": "6",
+        "width": "3"
+      }
+    ]
+
+  }
