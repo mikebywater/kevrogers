@@ -12,7 +12,7 @@ console.log(items)
 
     <div class="row bs-wizard" style="border-bottom:0;">
         
-        <div class="col-xs-3 bs-wizard-step complete">
+        <div class="col-xs-3 bs-wizard-step @if($job->status < 1) active @else complete @endif">
           <div class="text-center bs-wizard-stepnum">Calculate</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
@@ -23,7 +23,7 @@ console.log(items)
             </div>
         </div>
         
-        <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+        <div class="col-xs-3 bs-wizard-step @if($job->status < 1) disabled @elseif($job->status == 1) active @else complete @endif"><!-- complete -->
           <div class="text-center bs-wizard-stepnum">Estimate</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
@@ -34,7 +34,7 @@ console.log(items)
            </div>
         </div>
         
-        <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+        <div class="col-xs-3 bs-wizard-step @if($job->status < 2) disabled @elseif($job->status == 2) active @else complete @endif"><!-- complete -->
           <div class="text-center bs-wizard-stepnum">Invoice</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
@@ -45,7 +45,7 @@ console.log(items)
            </div>
         </div>
         
-        <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
+        <div class="col-xs-3 bs-wizard-step @if($job->status < 3) disabled @elseif($job->status == 3) active @else complete @endif"><!-- active -->
           <div class="text-center bs-wizard-stepnum">Payment</div>
           <div class="progress"><div class="progress-bar"></div></div>
           <a href="#" class="bs-wizard-dot"></a>
