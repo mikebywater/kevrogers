@@ -1,6 +1,5 @@
 {
 
-"doors": "2",
 "skirtings" : "yes",
 "walls": [
       {
@@ -13,6 +12,13 @@
         "height": "6",
         "width": "3"
       }
-    ]
+    ],
+    "doors": []
+
+  }
+
+  {
+"walls": [],
+    "doors": []
 
   }
