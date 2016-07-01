@@ -109,6 +109,7 @@ console.log(items)
                             <td></td>
                         </tr>
                     </table>
+                    <textarea>@{{itemString}}</textarea>
 
                 </div>
 
