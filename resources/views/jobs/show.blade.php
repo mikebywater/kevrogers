@@ -7,6 +7,7 @@
 </script>
 
 
+
 <div class="container" id="app">
 
     <div class="row bs-wizard" style="border-bottom:0;">
@@ -57,6 +58,7 @@
     </div>
 
     <div class="row">
+
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Basic Details</div>
@@ -74,6 +76,7 @@
         </div>
     </div>
     <div class="row">
+        @if($job->status < 1)
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">Labour</div>
@@ -152,20 +155,23 @@
             <form method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="put"/>
-                <input type="hidden" name="status" value="2"/>
+                <input type="hidden" name="status" value="1"/>
                 <input type="hidden" name="items" value="@{{itemString}}"/>
                 <button class="btn btn-sm btn-success">Next</button>
             </form>
+            @endif
         </div>
     </div>
 
-@if($job->status > 1)
+
+
+@if($job->status == 1)
 
  @include('jobs._estimates')
 
 @endif
 
-@if($job->status > 2)
+@if($job->status == 2)
 
  @include('jobs._invoices')
 
