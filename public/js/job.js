@@ -3,7 +3,7 @@ new Vue({
 	data:
 	{
 		items: items,
-        itemString : ""
+        itemString : JSON.stringify(this.items)
 	},
     methods:
     {

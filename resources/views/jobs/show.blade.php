@@ -3,8 +3,7 @@
 @section('content')
 
 <script>
-var items = {!!$job->items!!}
-console.log(items)
+    var items = {!!$job->items!!}
 </script>
 
 
@@ -109,7 +108,7 @@ console.log(items)
                             <td></td>
                         </tr>
                     </table>
-                    <textarea>@{{itemString}}</textarea>
+
 
                 </div>
 
@@ -128,7 +127,7 @@ console.log(items)
 
 
                     </select>
-                                        <select id = "wall-type">   
+                    <select id = "wall-type">
                         <option selected>Living Room</option>
                         <option>Bedroom</option>
                         <option>Dining Room</option>
@@ -148,7 +147,15 @@ console.log(items)
 
                 </div>
 
+
             </div>
+            <form method="post">
+                {{ csrf_field() }}
+                <input type="hidden" name="_method" value="put"/>
+                <input type="hidden" name="status" value="2"/>
+                <input type="hidden" name="items" value="@{{itemString}}"/>
+                <button class="btn btn-sm btn-success">Next</button>
+            </form>
         </div>
     </div>
 

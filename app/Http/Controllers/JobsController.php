@@ -100,11 +100,14 @@ class JobsController extends Controller
     {
         
         $job = Job::findOrFail($id);
-        $job->update($request->all());
+        $job->fill($request->all());
+
+
+        $job->save();
 
         Session::flash('flash_message', 'Job updated!');
 
-        return redirect('jobs');
+        return redirect('jobs/' . $id);
     }
 
     /**
