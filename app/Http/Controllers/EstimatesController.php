@@ -58,7 +58,7 @@ class EstimatesController extends Controller
 
         Session::flash('flash_message', 'Estimate added!');
 
-        return redirect('estimates');
+        return redirect("jobs/$request->job_id");
     }
 
     /**

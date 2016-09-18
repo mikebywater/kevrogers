@@ -53,11 +53,11 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         
-        Job::create($request->all());
+        $job = Job::create($request->all());
 
         Session::flash('flash_message', 'Job added!');
 
-        return redirect('jobs');
+        return redirect('jobs/' . $job->id);
     }
 
     /**

@@ -9,7 +9,6 @@
 
 
 <div class="container" id="app">
-
     <div class="row bs-wizard" style="border-bottom:0;">
         
         <div class="col-xs-3 bs-wizard-step @if($job->status < 1) active @else complete @endif">
@@ -56,128 +55,51 @@
            </div>
         </div>
     </div>
-
     <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-md-1">
+            <form method="post">
+                {{ csrf_field() }}
+                <input type="hidden" name="_method" value="put"/>
+                <input type="hidden" name="status" value="{{$job->status - 1}}"/>
+                <input type="hidden" name="items" value="@{{itemString}}"/>
+                <button class="btn btn-md btn-danger">Previous</button>
+            </form>
+          </div>
+
+        <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-heading">Basic Details</div>
-
                 <div class="panel-body">
                     <strong> Date </strong> {{ $job->date }}<br>
                     <strong> Name </strong> {{ $job->customer->forename}} {{ $job->customer->surname}}<br>
                     <strong> Description</strong> {{ $job->description }}<br>
-                    
-                    
-
                 </div>
-
             </div>
         </div>
-    </div>
-    <div class="row">
-        @if($job->status < 1)
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">Labour</div>
 
-                <div class="panel-body">
-                    <h4>Walls</h4>
-
-                    <table class="table table-striped">
-                        <tr>
-                            <th>Type</th>
-                            <th>Height</th>
-                            <th>Width</th>
-                            <th style="width:100px">Time</th>
-                        </tr>
-                        <tr v-for="wall in items.walls">
-                            <td>@{{wall.type}}</td>
-                            <td>@{{wall.height}}</td>
-                            <td>@{{wall.width}}</td>
-                            <td></td>
-                        </tr>
-                    </table>
-
-                    <h4>Doors</h4>
-
-                    <table class="table table-striped">
-                        <tr>
-                            <th>Type</th>
-                            <th style="width:100px">Time</th>
-                        </tr>
-                        <tr v-for="door in items.doors">
-                            <td>@{{door.type}}</td>
-                            <td></td>
-                        </tr>
-                    </table>
-
-
-                </div>
-
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">Tasks</div>
-
-                <div class="panel-body">
-                    <h4>Walls / Ceilings</h4>
-                    <select id = "wall-type">   
-                        <option selected>Paper Wall</option>
-                        <option>Paint Wall</option>
-                        <option>Ceiling</option>
-
-
-                    </select>
-                    <select id = "wall-type">
-                        <option selected>Living Room</option>
-                        <option>Bedroom</option>
-                        <option>Dining Room</option>
-
-
-                    </select>
-                    <input style="width:50px;" type = "number" id = "wall-height">
-                    <input style="width:50px;" type = "number" id = "wall-width">
-                    <button class="btn btn-primary btn-xs" v-on:click="addWall">Add Wall Task</button>
-
-                    <h4>Doors</h4>
-                    <select id = "door-type">   
-                        <option selected>Sand Door</option>
-                        <option>Paint Door</option>
-                    </select>
-                    <button class="btn btn-primary btn-xs" v-on:click="addDoor">Add Door Task</button>
-
-                </div>
-
-
-            </div>
+        <div class="col-md-1">
             <form method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="put"/>
-                <input type="hidden" name="status" value="1"/>
+                <input type="hidden" name="status" value="{{$job->status + 1}}"/>
                 <input type="hidden" name="items" value="@{{itemString}}"/>
-                <button class="btn btn-sm btn-success">Next</button>
+                <button class="btn btn-md btn-success">Next</button>
             </form>
-            @endif
         </div>
+
     </div>
-
-
-
-@if($job->status == 1)
-
- @include('jobs._estimates')
-
-@endif
-
-@if($job->status == 2)
-
- @include('jobs._invoices')
-
-@endif
-
-
+    <div class="row">
+        @if($job->status < 1)
+            @include('jobs._calculate')
+        @endif
+        @if($job->status >= 1)
+            @include('jobs._estimates')
+        @endif
+        @if($job->status == 2)
+            @include('jobs._invoices')
+        @endif
+    </div>
 </div>
 
 
