@@ -68,20 +68,11 @@
                     {!! $errors->first('postcode', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
-            <div class="form-group {{ $errors->has('items') ? 'has-error' : ''}}">
-                {!! Form::label('items', 'Items: ', ['class' => 'col-sm-3 control-label']) !!}
-                <div class="col-sm-6">
-                    {!! Form::textarea('items', null, ['class' => 'form-control']) !!}
-                    {!! $errors->first('items', '<p class="help-block">:message</p>') !!}
-                </div>
-            </div>
-            <div class="form-group {{ $errors->has('materials') ? 'has-error' : ''}}">
-                {!! Form::label('materials', 'Materials: ', ['class' => 'col-sm-3 control-label']) !!}
-                <div class="col-sm-6">
-                    {!! Form::textarea('materials', null, ['class' => 'form-control']) !!}
-                    {!! $errors->first('materials', '<p class="help-block">:message</p>') !!}
-                </div>
-            </div>
+
+                    {!! Form::hidden('items', '{"walls": [],"doors": []}', ['class' => 'form-control']) !!}
+                    {!! Form::hidden('materials', '[]', ['class' => 'form-control']) !!}
+                    {!! Form::hidden('status', '0', ['class' => 'form-control']) !!}
+
 
 
                     <div class="form-group">

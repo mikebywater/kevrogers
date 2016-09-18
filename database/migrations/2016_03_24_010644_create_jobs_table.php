@@ -16,16 +16,16 @@ class CreateJobsTable extends Migration
             Schema::create('jobs', function(Blueprint $table) {
                 $table->increments('id');
                 $table->date('date');
-$table->text('description');
-$table->integer('customer_id');
-$table->string('house');
-$table->string('street');
-$table->string('town');
-$table->string('county');
-$table->string('postcode');
-$table->text('items');
-$table->text('materials');
-
+                $table->text('description');
+                $table->integer('customer_id');
+                $table->string('house');
+                $table->string('street');
+                $table->string('town');
+                $table->string('county');
+                $table->string('postcode');
+                $table->text('items');
+                $table->text('materials');
+                $table->integer('status');
                 $table->timestamps();
             });
             

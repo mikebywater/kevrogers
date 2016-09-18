@@ -50,7 +50,7 @@ class Customer extends Model
 
     public function scopeSearch($query, $search)
     {
-        return $query->where('surname' , 'LIKE' , "%$search%");
+        return $query->where('surname' , 'LIKE' , "$search");
     }
 
 }

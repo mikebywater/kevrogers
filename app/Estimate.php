@@ -16,6 +16,16 @@ class Estimate extends Model
 
     protected $appends = array('ref');
 
+    public function job()
+    {
+        return $this->belongsTo('App\Job');
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo('App\Customer');
+    }
+
     /**
      * Attributes that should be mass-assignable.
      *
@@ -23,7 +33,7 @@ class Estimate extends Model
      */
     protected $fillable = ['date', 'description', 'job_id', 'house', 'street', 'town', 'county', 'postcode', 'items', 'materials', 'items_price', 'materials_price'];
 
-        public function getRefAttribute()
+    public function getRefAttribute()
     {
         return str_pad($this->id, 6,0, STR_PAD_LEFT);
     }

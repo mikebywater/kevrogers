@@ -53,11 +53,11 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         
-        Job::create($request->all());
+        $job = Job::create($request->all());
 
         Session::flash('flash_message', 'Job added!');
 
-        return redirect('jobs');
+        return redirect('jobs/' . $job->id);
     }
 
     /**
@@ -69,9 +69,10 @@ class JobsController extends Controller
      */
     public function show($id)
     {
-        $job = Job::findOrFail($id);
+       $job = Job::findOrFail($id);
 
         return view('jobs.show', compact('job'));
+
     }
 
     /**
@@ -99,11 +100,14 @@ class JobsController extends Controller
     {
         
         $job = Job::findOrFail($id);
-        $job->update($request->all());
+        $job->fill($request->all());
+
+
+        $job->save();
 
         Session::flash('flash_message', 'Job updated!');
 
-        return redirect('jobs');
+        return redirect('jobs/' . $id);
     }
 
     /**

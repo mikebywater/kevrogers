@@ -21,11 +21,21 @@ class Job extends Model
      *
      * @var array
      */
-    protected $fillable = ['date', 'description', 'customer_id', 'house', 'street', 'town', 'county', 'postcode', 'items', 'materials'];
+    protected $fillable = ['date', 'description', 'customer_id', 'house', 'street', 'town', 'county', 'postcode', 'items', 'materials' , 'status'];
 
     public function customer()
     {
         return $this->belongsTo('App\Customer');
+    }
+
+    public function estimates()
+    {
+        return $this->hasMany('App\Estimate');
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany('App\Invoice');
     }
 
     public function getRefAttribute()
