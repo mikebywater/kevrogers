@@ -3,7 +3,8 @@
 @section('content')
 
 <script>
-    var items = {!!$job->items!!}
+    var items = {!!$job->items!!};
+    var totalTime = {!!$job->time!!}
 </script>
 
 
@@ -62,7 +63,6 @@
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="put"/>
                 <input type="hidden" name="status" value="{{$job->status - 1}}"/>
-                <input type="hidden" name="items" value="@{{itemString}}"/>
                 <button class="btn btn-md btn-danger">Previous</button>
             </form>
           </div>
@@ -74,6 +74,7 @@
                     <strong> Date </strong> {{ $job->date }}<br>
                     <strong> Name </strong> {{ $job->customer->forename}} {{ $job->customer->surname}}<br>
                     <strong> Description</strong> {{ $job->description }}<br>
+                    <span class="pull-right"><strong > Time</strong> @{{totalTime}}</span><br>
                 </div>
             </div>
         </div>
@@ -84,6 +85,7 @@
                 <input type="hidden" name="_method" value="put"/>
                 <input type="hidden" name="status" value="{{$job->status + 1}}"/>
                 <input type="hidden" name="items" value="@{{itemString}}"/>
+                <input type="hidden" name="time" value="@{{totalTime}}"/>
                 <button class="btn btn-md btn-success">Next</button>
             </form>
         </div>
