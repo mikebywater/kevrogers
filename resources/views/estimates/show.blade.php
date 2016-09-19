@@ -2,32 +2,72 @@
 
 @section('content')
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Estimate</div>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border-style : solid;
+            border-width : 2px;
+            font-size : 14px;
 
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>ID.</th> <th>Date</th><th>Description</th><th>Job Id</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ $estimate->id }}</td> <td> {{ $estimate->date }} </td><td> {{ $estimate->description }} </td><td> {{ $estimate->job_id }} </td>
-                                </tr>
-                            </tbody>    
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        .price {
+            width : 100px;
+            text-align: right;
+        }
+        .total
+        {   border-style : solid;
+            border-width : 2px;
+            background-color : #ccc;
+        }
+    </style>
+
+<div class="container" id="app">
+    <h3>Estimate {{$estimate->ref}}</h3>
+    <h4>Labour</h4>
+    <table class="invoice-table">
+        <tbody>
+
+            @foreach(json_decode($estimate->items)->walls as $wall)
+                <tr>
+                  <td> {{ $wall->type }} </td><td class="price">£ {{ $wall->time * 17 }}</td>
+                </tr>
+            @endforeach
+
+            @foreach(json_decode($estimate->items)->doors as $door)
+                <tr>
+                    <td> {{ $door->type }} </td><td class="price">£ {{ $door->time * 17 }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+        <tfoot>
+            <tr class="total">
+                <th>Total Labour</th><th class="price">£ {{ $estimate->price }}</th>
+            </tr>
+        </tfoot>
+    </table>
+    <br/>
+    <h4>Materials</h4>
+    <table class="invoice-table">
+        <tbody>
+
+            <tr>
+                <td> Paint </td><td class="price">£  -- </td>
+            </tr>
+            <tr class="total">
+                <th> Total Materials</th><th class="price">£ {{ $estimate->price }}</th>
+            </tr>
+
+
+        </tbody>
+    </table>
 </div>
+
 
 
 

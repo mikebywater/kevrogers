@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Kev Rogers Decorating</title>
+    <!-- Styles -->
+
+
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <img class="logo-large" src="img/logo.png"/>

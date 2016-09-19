@@ -4,7 +4,7 @@
 
 <script>
     var items = {!!$job->items!!};
-    var totalTime = {!!$job->time!!}
+    var totalTime = {!!$job->time + 0!!}
 </script>
 
 

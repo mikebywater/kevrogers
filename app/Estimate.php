@@ -14,7 +14,7 @@ class Estimate extends Model
      */
     protected $table = 'estimates';
 
-    protected $appends = array('ref');
+    protected $appends = array('ref' , 'totalLabourPrice');
 
     public function job()
     {
@@ -36,6 +36,16 @@ class Estimate extends Model
     public function getRefAttribute()
     {
         return str_pad($this->id, 6,0, STR_PAD_LEFT);
+    }
+
+    public function getTotalLabourPriceAttribute()
+    {
+        $totalLabourPrice = 0;
+        foreach(json_decode($this->items)->walls as $wall)
+        {
+            $totalLabourPrice = $totalLabourPrice + ($wall->time * 17);
+        }
+        return $totalLabourPrice;
     }
 
 }
