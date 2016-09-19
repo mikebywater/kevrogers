@@ -11,5 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<img class="logo-large" src="img/logo.png"/>
+
+<img class="logo-large pull-right" src="img/logo.png"/>
+
 @yield('content')
