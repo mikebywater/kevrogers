@@ -16,7 +16,7 @@
                     <td>@{{wall.type}}</td>
                     <td>@{{wall.height}}</td>
                     <td>@{{wall.width}}</td>
-                    <td></td>
+                    <td>@{{wall.time}}</td>
                 </tr>
             </table>
 
@@ -29,7 +29,7 @@
                 </tr>
                 <tr v-for="door in items.doors">
                     <td>@{{door.type}}</td>
-                    <td></td>
+                    <td>@{{door.time}}</td>
                 </tr>
             </table>
 
@@ -45,8 +45,8 @@
         <div class="panel-body">
             <h4>Walls / Ceilings</h4>
             <select id = "wall-type">
-                <option selected>Paper Wall</option>
-                <option>Paint Wall</option>
+                <option selected>Paper</option>
+                <option>Paint</option>
                 <option>Ceiling</option>
 
 
@@ -64,8 +64,10 @@
 
             <h4>Doors</h4>
             <select id = "door-type">
-                <option selected>Sand Door</option>
-                <option>Paint Door</option>
+                <option selected>Burning</option>
+                <option>Gloss</option>
+                <option>Satin</option>
+                <option>Varnish</option>
             </select>
             <button class="btn btn-primary btn-xs" v-on:click="addDoor">Add Door Task</button>
 
