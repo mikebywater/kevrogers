@@ -18,7 +18,7 @@
                                 @foreach($job->estimates as $item)
                                     {{-- */$x++;/* --}}
                                     <tr>
-                                        <td><a href="{{ url('estimates', $item->id) }}" target="_blank">{{ $item->date }}</a></td><td>{{ $item->description }}</td><td></td>
+                                        <td><a href="{{ url('estimates', $item->id) }}" target="_blank">{{ $item->date }}</a></td><td>{{ $item->description }}</td><td>{{$item->totalPric}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
