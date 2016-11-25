@@ -1,4 +1,4 @@
-var times = JSON.parse('{"times": {	"walls": { "Paper": "0.35555","Paint": "0.08888","Ceiling": "0.209"},"doors": {	"Varnish": "0.666",	"Burning": "1","Gloss": "0.6666","Stain-and-Varnish": "1","Satin": "1"},"skirting": "0.2222","windows": {"paint": "0.6666","prime-and-paint": "1"},"bannister": "0.0833"}}')
+var times = JSON.parse('{"times": {	"walls": { "Paper": "0.35555","Paint": "0.1666","Ceiling": "0.209"},"doors": {	"Varnish": "0.666",	"Burning": "1","Gloss": "0.6666","Stain-and-Varnish": "1","Satin": "1"},"skirting": "0.2222","windows": {"paint": "0.6666","prime-and-paint": "1"},"bannister": "0.0833"}}')
 
 new Vue({
   	el: '#app',
